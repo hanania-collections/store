@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Hanastorepku • KASKUS 2014 style</title>
+  <!-- Font Awesome 4 (biar makin lawas) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap 3 (vintage) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    /* KASKUS 2014 CLASSIC - blue gradasi, border-radius kotak, style forum jadul */
+    body {
+      background: #e7ebf2; /* biru abu kaskus */
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    /* navbar khas KASKUS: gradasi biru tua ke biru laut */
+    .kaskus-navbar {
+      background: #1c3d6b; /* fallback */
+      background: -moz-linear-gradient(top, #3264a8, #1a3e6b);
+      background: -webkit-linear-gradient(top, #3264a8, #1a3e6b);
+      background: linear-gradient(to bottom, #3264a8, #1a3e6b);
+      border-bottom: 3px solid #f4b342; /* garis kuning */
+      padding: 6px 0;
+      margin-bottom: 10px;
+      color: white;
+      border-radius: 0;
+    }
+
+    .logo-kaskus {
+      font-weight: bold;
+      font-size: 24px;
+      color: white;
+      text-shadow: 2px 2px 2px #0a1f33;
+    }
+
+    .logo-kaskus small {
+      font-size: 11px;
+      color: #f7d488;
+    }
+
+    .navbar-menu {
+      background: #2b4f7c;
+      padding: 5px 0;
+      border-bottom: 1px solid #3e6aa3;
+      margin-bottom: 10px;
+      font-size: 12px;
+      color: white;
+    }
+
+    .navbar-menu a {
+      color: white;
+      margin-right: 18px;
+      font-weight: bold;
+    }
+
+    /* kotak konten kaskus: border abu-abu, shadow tipis */
+    .kaskus-box {
+      background: #FFFFFF;
+      border: 1px solid #BCC9D5;
+      padding: 12px 10px;
+      margin-bottom: 15px;
+      box-shadow: 2px 2px 3px rgba(0,0,0,0.05);
+      border-radius: 5px;
+    }
+
+    .kaskus-box-title {
+      background: #e0e7f0;
+      padding: 6px 10px;
+      margin: -12px -10px 12px -10px;
+      border-bottom: 1px solid #BCC9D5;
+      font-weight: bold;
+      color: #1e3d66;
+      font-size: 14px;
+      border-radius: 5px 5px 0 0;
+    }
+
+    /* tombol ala kaskus */
+    .btn-kaskus {
+      background: #ffcf73;
+      background: linear-gradient(to bottom, #fff2d7, #ffcf73);
+      border: 1px solid #cb9f4a;
+      color: #633f00;
+      font-weight: bold;
+      font-size: 11px;
+      padding: 5px 12px;
+      border-radius: 15px;
+    }
+
+    .btn-kaskus:hover {
+      background: #ffe3aa;
+      cursor: pointer;
+    }
+
+    /* thread list / produk grid dibuat mirip thread */
+    .thread-row {
+      border-bottom: 1px dotted #9bb3cc;
+      padding: 8px 0;
+    }
+
+    .thread-icon {
+      color: #1e4c8f;
+      font-size: 16px;
+      margin-right: 6px;
+    }
+
+    .thread-title {
+      font-weight: bold;
+      color: #1a4b77;
+      font-size: 13px;
+    }
+
+    .thread-info {
+      color: #666;
+      font-size: 10px;
+    }
+
+    .pagination-kaskus {
+      background: #dbe3ed;
+      padding: 8px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    /* profile box (seperti di kanan) */
+    .profile-box {
+      background: #f4f7fc;
+      border: 1px solid #bcc9d5;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .avatar-kaskus {
+      background: #c0d0e2;
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      text-align: center;
+      line-height: 80px;
+      font-size: 40px;
+      color: #ffffff;
+      margin: 0 auto 8px;
+      border: 2px solid #fff;
+      box-shadow: 0 0 3px #36629e;
+    }
+
+    .user-status {
+      background: #e6ffdd;
+      border: 1px solid #3b9e3b;
+      border-radius: 10px;
+      padding: 2px 6px;
+      font-size: 10px;
+      color: #006600;
+      display: inline-block;
+    }
+
+    /* signature ala kaskus */
+    .signature {
+      border-top: 2px dashed #b0c6dd;
+      margin-top: 15px;
+      padding-top: 8px;
+      font-size: 11px;
+      color: #4b6f9a;
+    }
+
+    /* footer kuno */
+    .footer-kaskus {
+      background: #d2dbe8;
+      border-top: 3px solid #b3c5db;
+      padding: 15px;
+      font-size: 11px;
+      color: #2c5079;
+      margin-top: 20px;
+    }
+
+    /* warna pink dipadukan sebagai aksen (sesuai permintaan) */
+    .pink-2014 {
+      background: #ff257d;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .pink-light {
+      background: #ff99c8;
+      color: #a12458;
+    }
+
+    .pink-pale-bg {
+      background: #fec6df;
+    }
+
+    /* slider container lawas pake thumbnail */
+    .kaslider {
+      background: #dde5f0;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #99b3cc;
+      margin-bottom: 15px;
+    }
+
+    /* responsif sederhana */
+    @media (max-width: 767px) {
+      .logo-kaskus { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- KASKUS 2014 TOP NAVBAR -->
+<div class="kaskus-navbar">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-md-4">
+        <span class="logo-kaskus">HANASTORE<span style="color:#ffd966;">PKU</span> <small>forum jual beli</small></span>
+      </div>
+      <div class="col-xs-6 col-md-8 text-right">
+        <span><i class="fa fa-user"></i> halo, jahitmanis</span> |
+        <span><i class="fa fa-envelope"></i> 2 PM</span> |
+        <span><i class="fa fa-bell"></i> notif</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- menu kedua -->
+<div class="navbar-menu">
+  <div class="container">
+    <a href="#"><i class="fa fa-home"></i> Beranda</a>
+    <a href="#"><i class="fa fa-comments"></i> Forum</a>
+    <a href="#"><i class="fa fa-tag"></i> Jual Beli</a>
+    <a href="#"><i class="fa fa-picture-o"></i> Gallery</a>
+    <a href="#"><i class="fa fa-sign-out"></i> Logout</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <!-- KOLOM KIRI (konten utama) 8 kolom -->
+    <div class="col-md-8 col-xs-12">
+
+      <!-- breadcrumb lawas -->
+      <div style="background: #d9e1ef; padding: 5px 10px; border-radius: 5px; margin-bottom: 12px; font-size: 11px;">
+        <i class="fa fa-map-marker"></i> Hanastorepku > Pakaian Wanita > Jilbab & Gamis
+      </div>
+
+      <!-- SLIDER PROMO ala Kaskus (thumbnail slider) -->
+      <div class="kaskus-box">
+        <div class="kaskus-box-title"><i class="fa fa-photo"></i> SLIDER PROMO TERBARU (via JavaScript)</div>
+        <div class="kaslider text-center" id="promoSliderKaskus">
+          <!-- akan diisi gambar/ promo lewat JS -->
+          <div class="promo-slide-2014">
+            <span class="pink-2014">SALE 40%</span> <strong>GAMIS BROKAT</strong> harga spesial!
+          </div>
+          <div style="margin-top:10px;">
+            <span class="btn-kaskus" id="prevPromo"><i class="fa fa-chevron-left"></i> prev</span>
+            <span class="btn-kaskus" id="nextPromo">next <i class="fa fa-chevron-right"></i></span>
+          </div>
+          <div class="thread-info" id="promoIndicator">promo 1/3</div>
+        </div>
+      </div>
+
+      <!-- THREAD LIST: PRODUCT SLIDER HORIZONTAL (versi kaskus jadul) -->
+      <div class="kaskus-box">
+        <div class="kaskus-box-title"><i class="fa fa-fire"></i> BEST PICKS (HOT THREADS)</div>
+        <div style="overflow-x: auto; white-space: nowrap; padding: 5px 0;" id="productSlider2014">
+          <!-- injected by js -->
+          <div class="thread-row" style="display: inline-block; width: 150px; margin-right: 15px; white-space: normal; vertical-align: top;">
+            <div class="avatar-kaskus" style="width:100px; height:100px; line-height:100px;"><i class="fa fa-hijab"></i></div>
+            <span class="thread-title">JILBAB</span> <span class="pink-2014">premium</span>
+          </div>
+          <!-- other items will be injected -->
+        </div>
+        <div class="pagination-kaskus" style="margin-top:10px;">
+          <i class="fa fa-arrow-left"></i> <span class="btn-kaskus">1</span> <span class="btn-kaskus">2</span> <span class="btn-kaskus">3</span> <i class="fa fa-arrow-right"></i>
+        </div>
+      </div>
+
+      <!-- DAFTAR PRODUK UTAMA (GRID) dibuat seperti thread list -->
+      <div class="kaskus-box">
+        <div class="kaskus-box-title"><i class="fa fa-th-large"></i> DAFTAR PRODUK (JILBAB, KAOS, DASTER, GAMIS)</div>
+        <div id="mainProductGrid" class="row">
+          <!-- akan di populate javascript -->
+        </div>
+        <!-- page navigation -->
+        <div class="pagination-kaskus" style="margin-top:15px;">
+          <i class="fa fa-angle-double-left"></i> < 1 2 3 4 5 ... 10 > <i class="fa fa-angle-double-right"></i>
+        </div>
+      </div>
+
+      <!-- signature khas kaskus -->
+      <div class="signature">
+        <i class="fa fa-heart" style="color:#ff257d;"></i> <strong>Hanastorepku</strong> : jahit & permak pakaian wanita, jual pakaian anak dewasa. KUALITAS PREMIUM. Jl. Abdul Majid, Perm. Setia Pertiwi 3 Blok A1-11. 0813 7870 3430
+      </div>
+    </div>
+
+    <!-- KOLOM KANAN (profil, info) -->
+    <div class="col-md-4 col-xs-12">
+      <!-- profile box -->
+      <div class="profile-box text-center">
+        <div class="avatar-kaskus">
+          <i class="fa fa-user-secret"></i>
+        </div>
+        <span class="thread-title">Hanastorepku</span>
+        <div><span class="user-status"><i class="fa fa-circle"></i> online</span></div>
+        <div style="margin: 8px 0;">
+          <i class="fa fa-star pink-2014"></i> <i class="fa fa-star pink-2014"></i> <i class="fa fa-star pink-2014"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> (126)
+        </div>
+        <hr style="border-color:#bcc9d5;">
+        <div class="text-left small">
+          <i class="fa fa-phone"></i> <strong>0813 7870 3430</strong><br>
+          <i class="fa fa-map-marker"></i> Jl. Abdul Majid, Perm. Setia Pertiwi 3 Blok A1-11<br>
+          <i class="fa fa-tag"></i> menerima jahit & permak
+        </div>
+        <hr style="border-color:#bcc9d5;">
+        <div>
+          <span class="btn-kaskus"><i class="fa fa-comment"></i> PM</span>
+          <span class="btn-kaskus"><i class="fa fa-whatsapp"></i> WA</span>
+        </div>
+      </div>
+
+      <!-- iklan mini / stats -->
+      <div class="kaskus-box">
+        <div class="kaskus-box-title">STATUS TOKO</div>
+        <ul class="list-unstyled">
+          <li><i class="fa fa-check-circle" style="color:green;"></i> Jilbab: 12 thread</li>
+          <li><i class="fa fa-check-circle" style="color:green;"></i> Kaos: 8 thread</li>
+          <li><i class="fa fa-check-circle" style="color:green;"></i> Daster: 15 thread</li>
+          <li><i class="fa fa-check-circle" style="color:green;"></i> Gamis: 21 thread</li>
+        </ul>
+        <div class="pink-pale-bg" style="padding:8px; border-radius:5px;">
+          <i class="fa fa-gem"></i> KUALITAS PREMIUM <i class="fa fa-gem"></i>
+        </div>
+      </div>
+
+      <!-- HAPPY SHOPPING sticker -->
+      <div class="profile-box text-center pink-pale-bg">
+        <span style="font-size:20px;">😊 HAPPY SHOPPING 😊</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER ala kaskus 2014 -->
+<div class="footer-kaskus">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <i class="fa fa-copyright"></i> 2026 Hanastorepku - Katalog via KASKUS theme. Menerima jahit pakaian wanita, permak, dll.
+      </div>
+      <div class="col-xs-12 col-md-6 text-right">
+        <span class="pink-2014">JILBAB</span> <span class="pink-2014">KAOS</span> <span class="pink-2014">DASTER</span> <span class="pink-2014">GAMIS</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL POPUP (kaskus style) -->
+<div class="modal fade" id="kaskusModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="border-radius: 8px; border:3px solid #3264a8;">
+      <div class="modal-header" style="background: #e0e7f0; border-bottom:1px solid #bcc9d5;">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title" id="modalTitleKaskus" style="color:#1e3d66;">Detail Produk</h4>
+      </div>
+      <div class="modal-body text-center" id="modalBodyKaskus">
+        <div class="avatar-kaskus" style="width:100px; height:100px; margin:0 auto;" id="modalIconKaskus"><i class="fa fa-tshirt"></i></div>
+        <h4 id="modalNameKaskus">JILBAB</h4>
+        <span class="pink-2014" id="modalQualityKaskus">PREMIUM</span>
+        <p style="margin-top: 12px;" id="modalDescKaskus">Bahan ceruty silk, nyaman dipakai.</p>
+      </div>
+      <div class="modal-footer" style="border-top:1px solid #bcc9d5;">
+        <button type="button" class="btn-kaskus" data-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery & Bootstrap 3 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  // data produk sesuai tema
+  var produkList = [
+    { name: 'JILBAB', icon: 'fa-hijab', desc: 'Ceruty silk, pasmina instan, berbagai warna.', quality: 'PREMIUM' },
+    { name: 'KAOS', icon: 'fa-tshirt', desc: 'Cotton combed 30s, sablon rubber, lengan pendek/panjang.', quality: 'PREMIUM' },
+    { name: 'DASTER', icon: 'fa-female', desc: 'Rayon motif bunga & abstrak, bahan adem.', quality: 'PREMIUM' },
+    { name: 'GAMIS', icon: 'fa-user-tie', desc: 'Brocade italia, payet exclusive, size L-XL.', quality: 'PREMIUM' },
+    { name: 'ANAK', icon: 'fa-child', desc: 'Setelan gamis anak umur 2-10 thn, katun.', quality: 'soft' },
+    { name: 'DEWASA', icon: 'fa-vest', desc: 'Atasan tunik, bahan wolfis, motif kekinian.', quality: 'PREMIUM' },
+    { name: 'JILBAB INSTAN', icon: 'fa-hijab', desc: 'Pashmina instan diamond, ceruty magnum.', quality: 'PREMIUM' },
+    { name: 'DRESS', icon: 'fa-female', desc: 'Dress brokat pesta, lengan balon.', quality: 'PREMIUM' }
+  ];
+
+  // fungsi show modal ala kaskus
+  function tampilModal(item) {
+    $('#modalTitleKaskus').text(item.name);
+    $('#modalNameKaskus').text(item.name);
+    $('#modalIconKaskus').html('<i class="fa ' + item.icon + '"></i>');
+    $('#modalQualityKaskus').text(item.quality);
+    $('#modalDescKaskus').text(item.desc);
+    $('#kaskusModal').modal('show');
+  }
+
+  // SLIDER PROMO manual dengan prev/next (kaskus style)
+  var promoList = [
+    { judul: "SALE 40% GAMIS BROKAT", ket: "potongan harga spesial" },
+    { judul: "JILBAB PREMIUM", ket: "beli 2 gratis 1 bros" },
+    { judul: "GRATIS ONGKIR", ket: "min belanja 200k" }
+  ];
+  var promoIdx = 0;
+  function updatePromo() {
+    var p = promoList[promoIdx];
+    $('#promoSliderKaskus .promo-slide-2014').html('<span class="pink-2014">' + p.judul.split(' ')[0] + '</span> <strong>' + p.judul.substr(p.judul.indexOf(' ')+1) + '</strong> ' + p.ket);
+    $('#promoIndicator').text('promo ' + (promoIdx+1) + '/' + promoList.length);
+  }
+  $('#prevPromo').click(function() {
+    promoIdx = (promoIdx - 1 + promoList.length) % promoList.length;
+    updatePromo();
+  });
+  $('#nextPromo').click(function() {
+    promoIdx = (promoIdx + 1) % promoList.length;
+    updatePromo();
+  });
+  updatePromo();
+
+  // ISi PRODUCT SLIDER (horizontal)
+  var sliderContainer = $('#productSlider2014');
+  sliderContainer.empty();
+  for (var i=0; i<5; i++) {
+    var it = produkList[i];
+    var el = $('<div class="thread-row" style="display: inline-block; width: 150px; margin-right: 15px; white-space: normal; vertical-align: top; cursor:pointer;">' +
+      '<div class="avatar-kaskus" style="width:100px; height:100px; line-height:100px;"><i class="fa ' + it.icon + '"></i></div>' +
+      '<span class="thread-title">' + it.name + '</span> <span class="pink-2014">' + it.quality + '</span>' +
+      '</div>');
+    el.click(function(index) {
+      return function(){ tampilModal(produkList[index]); };
+    }(i));
+    sliderContainer.append(el);
+  }
+
+  // GRID utama (tampilan seperti thread)
+  var grid = $('#mainProductGrid');
+  grid.empty();
+  for (var j=0; j<produkList.length; j++) {
+    var prod = produkList[j];
+    var col = $('<div class="col-xs-6 col-md-4" style="margin-bottom:15px;">' +
+      '<div class="kaskus-box" style="cursor:pointer; height:100%;">' +
+      '<div class="avatar-kaskus" style="width:70px; height:70px; line-height:70px; font-size:30px; float:left; margin-right:8px;"><i class="fa ' + prod.icon + '"></i></div>' +
+      '<span class="thread-title">' + prod.name + '</span> <span class="pink-2014">' + prod.quality + '</span>' +
+      '<p class="thread-info">' + prod.desc.substring(0,25) + '...</p>' +
+      '<div style="clear:both;"></div>' +
+      '</div></div>');
+    col.find('.kaskus-box').click(function(idx) {
+      return function(){ tampilModal(produkList[idx]); };
+    }(j));
+    grid.append(col);
+  }
+
+  // tambahkan efek scroll minimal (ga perlu)
+});
+</script>
+
+<!-- tambahan sentuhan pink -->
+<style>
+  .pink-2014 { background: #ff257d; }
+  .fa-hijab:before { content: "\f0c4"; } /* font awesome 4 punya ikon hijab? kita pakai yg mirip */
+  .fa-hijab:before { content: "\f1e2"; } /* pakai fa-user-sebenarnya, tapi kita ganti */
+</style>
+<!-- konsistensi ikon: fa-hijab di FONTAWESOME4 gak ada, kita pake fa-female atau custom -->
+<script>
+  // sedikit patch untuk ikon hijab ganti dengan fa-female
+  $(document).ready(function() {
+    $('.fa-hijab').each(function() { $(this).removeClass('fa-hijab').addClass('fa-female'); });
+  });
+</script>
+</body>
+</html>
